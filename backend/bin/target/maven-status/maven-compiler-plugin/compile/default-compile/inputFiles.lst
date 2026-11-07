@@ -1,0 +1,15 @@
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\config\DocsConfig.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\DocsQaApplication.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\model\AskRequest.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\model\AskResponse.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\model\Doc.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\model\DocsFile.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\model\FeedbackRequest.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\model\StoredFeedback.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\search\Bm25Index.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\search\Passage.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\search\Synonyms.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\search\Tokenizer.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\service\DocsQaService.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\service\FeedbackStore.java
+C:\Users\labuser\Downloads\case-study-5-docs-qa-assistant\case-study-5-docs-qa-assistant\backend\src\main\java\com\solstice\docsqa\web\QaController.java

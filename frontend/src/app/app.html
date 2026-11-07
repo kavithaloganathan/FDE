@@ -1,0 +1,57 @@
+<main>
+  <h1>Solstice Docs Q&amp;A</h1>
+
+  <form (ngSubmit)="ask()">
+    <input
+      name="question"
+      placeholder="Ask a question about the docs"
+      [ngModel]="question()"
+      (ngModelChange)="question.set($event)"
+    />
+    <button type="submit" [disabled]="loading()">Ask</button>
+  </form>
+
+  <div class="examples">
+    @for (ex of examples; track ex) {
+      <button type="button" class="chip" (click)="ask(ex)">{{ ex }}</button>
+    }
+  </div>
+
+  @if (loading()) {
+    <p>Searching the docs...</p>
+  }
+
+  @if (error(); as err) {
+    <p class="error">{{ err }}</p>
+  }
+
+  @if (response(); as r) {
+    <section class="answer" [class.unanswered]="!r.answered">
+      <p>{{ r.answer }}</p>
+      @if (r.answered) {
+        <small>Source: {{ r.sourceTitle }} ({{ r.sourceDocId }}) &middot; match {{ r.confidence | percent: '1.0-0' }}</small>
+      }
+    </section>
+
+    @if (r.answered) {
+      <div class="actions">
+        @if (feedbackSent()) {
+          <span>Thanks for the feedback.</span>
+        } @else {
+          <button type="button" (click)="sendFeedback(true)">Helpful</button>
+          <button type="button" (click)="sendFeedback(false)">Not helpful</button>
+        }
+        <button type="button" (click)="toggleArticle()">
+          {{ article() ? 'Hide' : 'Show' }} full article
+        </button>
+      </div>
+    }
+  }
+
+  @if (article(); as a) {
+    <article class="full">
+      <h3>{{ a.title }}</h3>
+      <p>{{ a.content }}</p>
+    </article>
+  }
+</main>

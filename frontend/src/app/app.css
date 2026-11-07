@@ -1,0 +1,67 @@
+main {
+  max-width: 720px;
+  margin: 2rem auto;
+  font-family: system-ui, sans-serif;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.chip {
+  font-size: 0.85rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+
+.answer {
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.answer.unanswered {
+  border-left-color: #b45309;
+  background: #fffbeb;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.full {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}

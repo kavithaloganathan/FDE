@@ -1,0 +1,8 @@
+{
+  "login": ["log in", "sign in", "sign on"],
+  "limit": ["cap", "maximum", "max", "quota"],
+  "retain": ["keep", "kept", "store", "stored"],
+  "forget": ["forgot", "forgotten"],
+  "cancel": ["cancelled"],
+  "invite": ["invitation", "invitations"]
+}
