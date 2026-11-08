@@ -1,0 +1,28 @@
+Final eval report
+=================
+
+Date: 2026-11-08
+Project: docs-qa-backend
+
+Result from the latest verified run:
+
+- Test class: com.solstice.docsqa.eval.EvalReportTest
+- Tests run: 1
+- Failures: 0
+- Errors: 0
+- Skipped: 0
+- Status: PASS
+
+Evidence:
+- Report file: target/surefire-reports/com.solstice.docsqa.eval.EvalReportTest.txt
+- Verified output:
+  ------------------------------------------------------------------------------
+  Test set: com.solstice.docsqa.eval.EvalReportTest
+  ------------------------------------------------------------------------------
+  Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.579 s -- in com.solstice.docsqa.eval.EvalReportTest
+
+Command used:
+  $env:JAVA_HOME = "C:\Program Files\Java\jdk-25.0.3"; $env:Path = "$env:JAVA_HOME\bin;$env:Path"; mvn -q -Dtest=EvalReportTest test
+
+Summary:
+The eval suite passes under Java 25 with the final routing/refusal logic applied.
