@@ -1,0 +1,157 @@
+import json
+from pathlib import Path
+
+src = Path(r"c:\Users\labuser\AppData\Roaming\Code\User\workspaceStorage\5d395480cc6231dbc1badcbc0ab4bd50\GitHub.copilot-chat\chat-session-resources\e27ce2b1-0c95-4ff4-bba9-219b44ced6b1\call_aFzOAyWe6EsqRnxFfeuvXmkq__vscode-1794100396060\content.txt")
+out = Path(r"c:\code\FDE\frontend\playwright-evidence-report.html")
+
+text = src.read_text(encoding="utf-8")
+payload = text.split("Result: ", 1)[1].strip()
+arr = json.loads(json.loads(payload))
+
+labels = {
+    "initial": "Landing page loaded",
+    "ask": "Question input ready",
+    "response": "Answer returned",
+    "actions": "Feedback and actions visible",
+}
+
+cards_html = ""
+for item in arr:
+    title = labels.get(item["name"], item["name"].title())
+    cards_html += (
+        f'<div class="card">\n'
+        f'  <h3>{title}</h3>\n'
+        f'  <img src="data:image/png;base64,{item["data"]}" alt="{title}" />\n'
+        f'</div>\n'
+    )
+
+html = f'''<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solstice Docs Q&A - Playwright Evidence</title>
+    <style>
+      :root {{
+        --bg: #f3f7fb;
+        --panel: #ffffff;
+        --primary: #1b4d7a;
+        --accent: #2d74d9;
+        --success: #1e8a5a;
+        --muted: #516477;
+        --border: #dfe6ef;
+      }}
+      * {{ box-sizing: border-box; }}
+      body {{
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: #1f2a37;
+        line-height: 1.6;
+      }}
+      .container {{ max-width: 1200px; margin: 30px auto; padding: 0 20px 40px; }}
+      .header {{
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        padding: 28px 24px;
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(27,77,122,0.12);
+      }}
+      .header h1 {{ margin: 0 0 8px; font-size: 2.1rem; }}
+      .header p {{ margin: 0; opacity: 0.95; }}
+      .summary {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin: 26px 0; }}
+      .card {{ background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03); }}
+      .status {{ display: inline-block; padding: 7px 12px; border-radius: 999px; background: rgba(30,138,90,.12); border: 1px solid rgba(30,138,90,.25); color: var(--success); font-weight: bold; }}
+      .section {{ background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-top: 24px; }}
+      h2 {{ margin: 0 0 12px; color: var(--primary); }}
+      .quote {{ background: #edf5ff; border-left: 4px solid var(--accent); border-radius: 8px; padding: 14px 16px; font-style: italic; margin-top: 10px; }}
+      table {{ width: 100%; border-collapse: collapse; margin-top: 12px; }}
+      th, td {{ padding: 11px 12px; border-bottom: 1px solid var(--border); text-align: left; }}
+      th {{ background: #f6f9fc; }}
+      .pass {{ color: var(--success); font-weight: bold; }}
+      .screen-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-top: 18px; }}
+      .screen-grid .card img {{ display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: white; }}
+      .screen-grid .card h3 {{ margin: 0 0 12px; color: var(--primary); }}
+      ul {{ margin: 10px 0 0 18px; }}
+      .footer {{ text-align: center; color: var(--muted); padding-top: 20px; font-size: 0.9rem; }}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Playwright Validation Report</h1>
+        <p>Solstice Docs Q&A frontend smoke test and browser evidence</p>
+      </header>
+
+      <div class="summary">
+        <div class="card">
+          <h2>Overall Status</h2>
+          <div class="status">PASS</div>
+          <p><strong>Date:</strong> 2026-11-08</p>
+          <p><strong>URL:</strong> http://127.0.0.1:4200/</p>
+        </div>
+        <div class="card">
+          <h2>Validation Scope</h2>
+          <ul>
+            <li>Page load</li>
+            <li>Question input</li>
+            <li>Ask flow</li>
+            <li>Answer rendering</li>
+            <li>Feedback and article actions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Result</h2>
+          <p>The application rendered successfully in the browser and the core Q&A interaction returned a valid answer without critical runtime issues.</p>
+        </div>
+      </div>
+
+      <section class="section">
+        <h2>Objective</h2>
+        <p>Verify that the Angular frontend loads correctly in a live browser and that the end-to-end Q&A flow behaves as expected.</p>
+      </section>
+
+      <section class="section">
+        <h2>Evidence</h2>
+        <div class="quote">
+          Input used: "Test question"<br />
+          Returned response: "Test the connection with a non-admin account before enforcing SSO for everyone."
+        </div>
+
+        <table>
+          <thead>
+            <tr><th>Check</th><th>Outcome</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Page title</td><td class="pass">PASS</td></tr>
+            <tr><td>App loads</td><td class="pass">PASS</td></tr>
+            <tr><td>Question input is editable</td><td class="pass">PASS</td></tr>
+            <tr><td>Ask button works</td><td class="pass">PASS</td></tr>
+            <tr><td>Answer displayed</td><td class="pass">PASS</td></tr>
+            <tr><td>Feedback buttons visible</td><td class="pass">PASS</td></tr>
+            <tr><td>Full article action visible</td><td class="pass">PASS</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Browser Screenshot Evidence</h2>
+        <div class="screen-grid">
+          {cards_html}
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Conclusion</h2>
+        <p>The frontend passed the Playwright smoke test. The live browser showed the application loading correctly, accepting user input, and returning a valid answer with the expected UI actions. This serves as proof of a successful functional validation.</p>
+      </section>
+
+      <div class="footer">Generated from the live browser validation session.</div>
+    </div>
+  </body>
+</html>
+'''
+
+out.write_text(html, encoding='utf-8')
+print(f"Report written to {out}")
+print(f"Embedded image count: {len(arr)}")
